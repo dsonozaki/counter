@@ -1,10 +1,10 @@
 import {showForm,hideForm} from './infoBlock.js';
-const form = document.querySelector('.counter__form');
-const age = form.querySelector('#age');
-const height = form.querySelector('#height');
-const weight = form.querySelector('#weight');
-const submit = form.querySelector('.form__submit-button');
-const clear = form.querySelector('.form__reset-button');
+const script = document.querySelector('.counter__form');
+const age = script.querySelector('#age');
+const height = script.querySelector('#height');
+const weight = script.querySelector('#weight');
+const submit = script.querySelector('.form__submit-button');
+const clear = script.querySelector('.form__reset-button');
 let ageCorrect = false;
 let heightCorrect = false;
 let weightCorrect = false;
@@ -38,7 +38,7 @@ const validate = () => {
   }
 };
 
-const pristine = new Pristine(form);
+const pristine = new Pristine(script);
 
 const checkAge = () => {
   ageCorrect = pristine.validate(age);
@@ -69,12 +69,12 @@ weight.addEventListener('input', ()=>
   checkWeight()
 );
 
-form.addEventListener('submit', (evt) => {
+script.addEventListener('submit', (evt) => {
   evt.preventDefault();
   showForm();
 });
 
-form.addEventListener('reset',()=>{
+script.addEventListener('reset',()=>{
   hide(clear);
   hide(submit);
   resetFlags();
